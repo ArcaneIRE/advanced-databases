@@ -1,0 +1,40 @@
+services:
+    postgres:
+        image: postgres
+        container_name: AdvDB-postgres
+        environment:
+            - POSTGRES_USER=username #Reo keep the single quotes if you want to use special characters'
+            - POSTGRES_PASSWORD='the password you want to use -keep the single quotes if you want to use special characters'
+        volumes:
+            - postgres-db-volume:/var/lib/postgresql/data
+        ports:
+            - 5432:5432
+        networks:
+            - postgres-db-network
+    pgadmin:
+        image: dpage/pgadmin4
+        container_name: AdvDB-pgadmin
+        environment:
+            PGADMIN_DEFAULT_EMAIL: 'your email address keep the single quotes'
+            PGADMIN_DEFAULT_PASSWORD: 'password you want to use key the single quotes'
+        ports:
+            - 16543:80
+        volumes:
+            - ./servers.json:/pgadmin4/servers.json
+        networks:
+            - postgres-db-network
+  
+
+volumes:
+    postgres-db-volume:
+        driver: local
+        driver_opts:
+            type: none
+            o: bind
+            device: ./data
+
+networks:
+    postgres-db-network:
+        driver: bridge
+
+
