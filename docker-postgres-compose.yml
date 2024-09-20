@@ -4,7 +4,7 @@ services:
         container_name: AdvDB-postgres
         environment:
             - POSTGRES_USER=username #Reo keep the single quotes if you want to use special characters'
-            - POSTGRES_PASSWORD=password
+            - POSTGRES_PASSWORD="password"
         volumes:
             - postgres-db-volume:/var/lib/postgresql/data
         ports:
