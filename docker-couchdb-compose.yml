@@ -4,7 +4,7 @@ services:
       container_name: my_couchdb_container  # Set the container name - change this to include your Student Number
       environment:
         - COUCHDB_USER=admin  # Admin username for CouchDB - do not change this.
-        - COUCHDB_PASSWORD=couchdb  # Admin password for CouchDB - change this to be whatever password you want to use
+        - COUCHDB_PASSWORD=couchdbpass  # Admin password for CouchDB - change this to be whatever password you want to use
       ports:
         - 5984:5984  # Expose CouchDB on port 5984
       volumes:
