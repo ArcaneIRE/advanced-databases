@@ -6,7 +6,7 @@ services:
       - "9042:9042"
     environment:
       - CASSANDRA_SEEDS=cassandra1,cassandra2,cassandra3
-      - MAX_HEAP_SIZE=512M
+      - MAX_HEAP_SIZE=256M
       - HEAP_NEWSIZE=100M
       - CASSANDRA_USER=cassandra #don't change this
       - CASSANDRA_PASSWORD=cassandra_password #change this to whatever you want to use
@@ -19,7 +19,7 @@ services:
     container_name: cassandra2 #You change the name to be whatever you want
     environment:
       - CASSANDRA_SEEDS=cassandra1,cassandra2,cassandra3
-      - MAX_HEAP_SIZE=512M
+      - MAX_HEAP_SIZE=256M
       - HEAP_NEWSIZE=100M
     networks:
       - cassandra-network
@@ -29,7 +29,7 @@ services:
     container_name: cassandra3 #You change the name to be whatever you want
     environment:
       - CASSANDRA_SEEDS=cassandra1,cassandra2,cassandra3
-      - MAX_HEAP_SIZE=512M
+      - MAX_HEAP_SIZE=256M
       - HEAP_NEWSIZE=100M
     networks:
       - cassandra-network
