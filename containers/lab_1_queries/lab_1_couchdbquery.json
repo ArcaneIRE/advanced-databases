@@ -1,0 +1,9 @@
+{
+    "selector": {
+        "Age": {
+            "$eq": 23
+        }
+    },
+    "fields": ["Programme"],
+    "execution_stats": true
+}
